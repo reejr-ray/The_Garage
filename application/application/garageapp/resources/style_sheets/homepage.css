@@ -1,0 +1,11 @@
+
+.garagebutton {
+    border: solid white 2px;
+    transition: all 0.3s;
+}
+
+.garagebutton button:hover{
+    background-color: gray;
+    border: solid gray 2px;
+    transition: all 0.3s;
+}

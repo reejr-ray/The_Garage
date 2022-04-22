@@ -1,0 +1,42 @@
+body, html {
+    height: 100%;
+}
+
+.bg {
+    background-color: gray;
+    background-image: url(/resources/ProfileBackground.jpg);
+    height: 100%;
+    background-repeat: repeat-y;
+}
+
+.w3-display-container .profile_middle {
+    width:90%;
+    height:100%;
+}
+
+.w3-display-container .profile_header {
+    width:100%;
+    margin-bottom: 0;
+}
+
+.w3-display-container .profile_pic img {
+    width:100%;
+    min-width: 150px;
+    max-width:300px;
+}
+
+.w3-display-container .sidebar-container {
+    width:100%;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.w3-display-container .sidebar-container .sidebar {
+    height:1080px;
+    padding: 0;
+}
+
+.w3-display-container .sidebar-container .profile_content {
+    width:80%;
+    height: 1080px
+}

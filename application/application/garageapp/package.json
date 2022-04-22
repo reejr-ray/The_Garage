@@ -1,0 +1,17 @@
+{
+  "name": "garageapp",
+  "version": "1.0.0",
+  "description": "CSC668 Team 06",
+  "main": "garageapp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joel Samaniego Campos",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jquery": "^3.3.38",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1"
+  }
+}

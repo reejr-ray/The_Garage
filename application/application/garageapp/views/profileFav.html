@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Favorite Parking Spots</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../resources/style_sheets/profilePage.css">
+    <link rel="stylesheet" href="../resources/style_sheets/profilecontent.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body class = "w3-light-grey">
+<div class="page">
+    <!-- navbar -->
+    <div class="w3-bar w3-white w3-border-bottom w3-xlarge">
+        <a href="homepage.html" class="w3-bar-item w3-button w3-text-red w3-hover-red">
+            <b><i class="fa fa-map-marker w3-margin-right"></i>The Garage</b>
+        </a>
+        <a href="browseSpots.html" class="w3-bar-item w3-button w3-mobile">Browse Spots</a>
+        <a href="profile.html" class="w3-bar-item w3-button w3-right w3-hover-red w3-text-grey">
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+        </a>
+    </div>
+    <!-- //navbar -->
+
+    <!-- content container -->
+    <div class="bg w3-display-container w3-content" style="max-width:1920px;">
+        <div class="profile_middle container-fluid w3-display-middle">
+            <!-- Section Info & profile pic -->
+            <div class="profile_header row fluid-container jumbotron jumbotron-fluid w3-container">
+                <div class="col-3">
+                    <img src="../resources/profilepic.jpg" class="profile_pic img-thumbnail" alt="Lambo pic">
+                </div>
+                <div class="container col-9" style="">
+                    <div class="container">
+                        <h1 class="display-3">Favorite Spots</h1>
+                        <p class="lead">A helpful list bringing you back to the places you love.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- //Section Info & profile pic -->
+            <!-- sidebar & content -->
+            <div class="sidebar-container row container-fluid">
+                <!-- sidebar -->
+                <div class="col-3 container-fluid sidebar w3-border w3-margin-bottom">
+                    <a href="profile.html">My Profile</a>
+                    <a href="profileLisings.html">My Listings</a>
+                    <a class="#" href="profileHost.html">Host a Spot</a>
+                    <a class="active w3-leftbar w3-border-red" href="#">My Favorites</a>
+                </div>
+                <!-- //sidebar -->
+                <!-- content -->
+                <div class="profile_content col-9 container-fluid w3-white w3-right w3-border w3-margin-bottom">
+                    <iframe height="300px" width="100%" src="myFavorites.html" name="iframe_a"></iframe>
+
+                </div>
+                <!-- //content -->
+            </div>
+            <!-- //sidebar & content -->
+        </div>
+    </div>
+    <!-- //content container -->
+</div>
+<div class="w3-container footer">
+    <!-- Footer Content  -->
+    <div class="w3-container footer-content">
+        <!-- Footer About Section -->
+        <div class="w3-container footer-section about">
+            <h2 class="footer-section-header"><i class="fa fa-map-marker w3-margin-right" style="color:red;"></i>The Garage</h2>
+            <p>
+                Our mission is to provide a service that connects people to parking spots near their destination for a reasonable price.
+                We know half the journey is getting there, don't let the other half be parking.
+            </p>
+        </div>
+        <!-- //Footer About Section -->
+        <!-- Footer Quick Links Section -->
+        <div class="w3-container footer-section links">
+            <h2 class=footer-section-header">The Creators</h2>
+            <br>
+            <ul>
+                <a href="bPeraza.html">
+                    <li>Brad Peraza</li>
+                </a>
+                <a href="JiahongZhan.html">
+                    <li>Jiahong Zhan</li>
+                </a>
+                <a href="jsamcam.html">
+                    <li>Joel Samaniego</li>
+                </a>
+                <a href="mesoma.html">
+                    <li>Mesoma Esonwune</li>
+                </a>
+                <a href="rrees.html">
+                    <li>Ray Rees</li>
+                </a>
+                <a href="roshvargh.html">
+                    <li>Roshni Varghese</li>
+                </a>
+            </ul>
+            <!-- //Footer Quick Links Section -->
+        </div>
+        <!-- Footer Contact Us Section -->
+        <div class="w3-container footer-section contact-form">
+            <h2 class="footer-section-header">Contact us</h2>
+            <br>
+            <form action="index.html" method="post">
+                <input type="email" name="email" class="text-input contact-input" placeholder="example@gmail.com">
+                <textarea name="message" class="text-input contact-input" placeholder="Your Message Here..."></textarea>
+                <button type="submit" class="btn btn-big">
+                    <i class="fa fa-envelope"></i>
+                    Send
+                </button>
+            </form>
+
+
+            <div class="contact">
+                <span><i class="fa fa-phone"><a href="sms:123-456-7890"></a></i> &nbsp; 123-456-7890</span>
+                <span><i class="fa fa-envelope"></i> &nbsp; garageAppInfo@gmail.com</span>
+            </div>
+            <div class="socials">
+                <a href="https://facebook.com"><i class="fa fa-facebook"></i></a>
+                <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+                <a href="https://twitter.com"><i class="fa fa-twitter"></i></a>
+                <a href="https://youtube.com"><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+        <!-- //Footer Contact Us Section-->
+    </div>
+    <!-- //Footer Content -->
+    <!-- Footer bottom  -->
+    <div class="w3-container footer-bottom">
+        &copy; GarageApp.com | Designed by csc648 SFSU students
+    </div>
+    <!-- //Footer bottom -->
+</div>
+<!-- //Footer -->
+
+<script>
+    // Tabs
+    function openLink(evt, linkName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("myLink");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+        }
+        document.getElementById(linkName).style.display = "block";
+        evt.currentTarget.className += " w3-red";
+    }
+
+    // Click on the first tablink on load
+    document.getElementsByClassName("tablink")[0].click();
+
+    <!--
+    function openSearch() {
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function closeSearch() {
+        document.getElementById("myOverlay").style.display = "none";
+    }
+    -->
+</script>
+</body>
+</html>

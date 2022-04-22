@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Sign In/ Sign Up Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script rel="text/javascript" src="../resources/js/gAJavascript.js"></script>
+<style>
+    body,header {font-family: "Raleway", Arial, Helvetica, sans-serif}
+    body {
+        font-family: Arial;
+    }
+</style>
+<body class="w3-light-grey">
+
+<div class="w3-bar w3-white w3-border-bottom w3-xlarge">
+    <a href="homepage.html" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class="fa fa-map-marker w3-margin-right"></i>The Garage</b></a>
+    <a href="browseSpots.html" class="w3-bar-item w3-button w3-mobile">Browse Spots</a>
+    <a href="profile.html" class="w3-bar-item w3-button w3-right w3-hover-red w3-text-grey"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+</div>
+
+<header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+    <img class="w3-image" src="../resources/login.jpg" alt="log" width="1500" height="700">
+    <div class="w3-display-middle" style="width:50%">
+        <div class="w3-bar w3-black">
+            <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'In');"><i></i>Sign In</button>
+            <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Up');"><i></i>Sign Up</button>
+        </div>
+
+        <!-- Tabs -->
+        <div id="In" class="w3-container w3-white w3-padding-16 myLink">
+            <h3>Already have an Account with us?</h3>
+            <h3>Welcome back!</h3>
+            <form action="/login" class="w3-row-padding" style="margin:0 -16px;">
+                <div class="w3-auto">
+                    <label for="userEmail">Email:</label>
+                    <input id="userEmail" class="w3-input w3-border" type="email" placeholder="Enter the email that was used to register for your account" required>
+                </div>
+                <p> </p>
+                <div class="w3-auto">
+                    <label for="userPassword">Password:</label>
+                    <input id="userPassword" class="w3-input w3-border" type="password" placeholder="Enter the password that was used to register for your account" required>
+                </div>
+                <p> </p>
+                <button id="#sign-in" class="w3-button w3-dark-grey" type="submit">Sign In</button>
+            </form>
+
+        </div>
+
+        <div id="Up" class="w3-container w3-white w3-padding-16 myLink">
+            <h3>Interested in joining the revolution of parking?</h3>
+            <h3>Sign up now! </h3>
+            <div class="w3-row-padding" style="margin:0 -16px;">
+                <div class="w3-auto">
+                    <label>Email:</label>
+                    <input class="w3-input w3-border" type="email" placeholder="e.g. johndoe@mail.com">
+                </div>
+                <p> </p>
+                <div class="w3-auto">
+                    <label>Username:</label>
+                    <input class="w3-input w3-border" type="text" placeholder="e.g. jdoe123">
+                </div>
+                <p> </p>
+                <div class="w3-auto">
+                    <label>Password:</label>
+                    <input class="w3-input w3-border" type="password" placeholder="Must contain atleast 8 characters, one number, and one special character. e.g. theRealJ415!">
+                </div>
+                <p> </p>
+                <div class="w3-auto">
+                    <label>Confirm Password:</label>
+                    <input class="w3-input w3-border" type="password" placeholder="Re-enter the password above, passwords must match">
+                </div>
+            <div>
+                <form action="/action_page.php" method="get">
+                    <input type="checkbox" name="terms" value="box">
+                    I hereby agree to the  <a href="https://www.termsandconditionsgenerator.com/live.php?token=wLJo8b8FUlHfxOz1cd7nbnvibHXp9o94">Terms and Service Agreements</a>
+
+                    <!--                    <label> I hereby agree to the Terms and Service Agreements</label><br>-->
+                </form>
+            </div>
+            </div>
+            <p> </p>
+            <a href="homepage.html"><button class="w3-button w3-dark-grey">Sign Up</button></a>
+        </div>
+    </div>
+</header>
+
+<script>
+    // Tabs
+    function openLink(evt, linkName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("myLink");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+        }
+        document.getElementById(linkName).style.display = "block";
+        evt.currentTarget.className += " w3-red";
+    }
+
+    // Click on the first tablink on load
+    document.getElementsByClassName("tablink")[0].click();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>homepage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../resources/style_sheets/profilePage.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script rel="text/javascript" src="../resources/js/grabImage.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $.ajax({url: "/parking-spot/", success: function(result){
+                //calling the function that builds the html
+                addCustomHTML(result, "#specific-spot", "div");
+            }});
+    });
+</script>
+
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+    .myLink {display: none}
+    body {
+        font-family: Arial;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .openBtn {
+        background: #f1f1f1;
+        border: none;
+        padding: 10px 15px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .openBtn:hover {
+        background: #bbb;
+    }
+
+    .overlay {
+        height: 100%;
+        width: 100%;
+        display: none;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.9);
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 46%;
+        width: 80%;
+        text-align: center;
+        margin-top: 30px;
+        margin: auto;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .overlay .closebtn:hover {
+        color: #ccc;
+    }
+
+    .overlay input[type=text] {
+        padding: 15px;
+        font-size: 17px;
+        border: none;
+        float: left;
+        width: 80%;
+        background: white;
+    }
+
+    .overlay input[type=text]:hover {
+        background: #f1f1f1;
+    }
+
+    .overlay button {
+        float: left;
+        width: 20%;
+        padding: 15px;
+        background: #ddd;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .overlay button:hover {
+        background: #bbb;
+    }
+</style>
+
+<body class = "w3-light-grey">
+
+<!--
+<div id="myOverlay" class="overlay">
+    <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+    <div class="overlay-content">
+        <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</div>
+-->
+
+<div class="w3-bar w3-white w3-border-bottom w3-xlarge">
+    <a href="homepage.html" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class="fa fa-map-marker w3-margin-right"></i>The Garage</b></a>
+    <a href="browseSpots.html" class="w3-bar-item w3-button w3-mobile">Browse Spots</a>
+    <a href="#" class="w3-bar-item w3-button w3-right w3-hover-red w3-text-grey"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+</div>
+    <div class="w3-container" id="apartment">
+        <h2 class="w3-text-black">The Spot</h2>
+        <div id="specific-spot"></div>
+
+        <div class="w3-display-container mySlides">
+            <img src="../resources/coming-soon.jpg" style="width:100%;margin-bottom:-6px">        </div>
+        <div class="w3-display-container mySlides">
+            <img src="../resources/coming-soon.jpg" style="width:100%;margin-bottom:-6px">        </div>
+        <div class="w3-display-container mySlides">
+            <img src="../resources/coming-soon.jpg" style="width:100%;margin-bottom:-6px">        </div>
+    </div>
+
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col s3">
+            <img class="demo w3-opacity w3-hover-opacity-off" src="../resources/coming-soon.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(1)">
+        </div>
+        <div class="w3-col s3">
+            <img class="demo w3-opacity w3-hover-opacity-off" src="../resources/coming-soon.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(2)">
+        </div>
+        <div class="w3-col s3">
+            <img class="demo w3-opacity w3-hover-opacity-off" src="../resources/coming-soon.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
+        </div>
+        <div class="w3-col s3">
+            <img class="demo w3-opacity w3-hover-opacity-off" src="../resources/coming-soon.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(4)">
+        </div>
+        <hr>
+        <h4><strong>Description</strong></h4>
+        <p>This spot is located in a beautiful, safe neighborhood. The premise utilizes camera to ensure that your vehicle is safe!</p>
+        <hr>
+        <div id="paypal-button-container"></div>
+        <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
+        <script>
+            paypal.Buttons({
+                style: {
+                    shape: 'pill',
+                    color: 'gold',
+                    layout: 'vertical',
+                    label: 'pay',
+
+                },
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: '8'
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                    });
+                }
+            }).render('#paypal-button-container');
+        </script>
+
+        <button class="w3-button w3-block w3-red w3-margin-bottom">Book Spot</button>
+    </div>
+    <hr>
+<div class="w3-container footer">
+    <!-- Footer Content  -->
+    <div class="w3-container footer-content">
+        <!-- Footer About Section -->
+        <div class="w3-container footer-section about">
+            <h2 class="footer-section-header"><i class="fa fa-map-marker w3-margin-right" style="color:red;"></i>The Garage</h2>
+            <p>
+                Our mission is to provide a service that connects people to parking spots near their destination for a reasonable price.
+                We know half the journey is getting there, don't let the other half be parking.
+            </p>
+        </div>
+        <!-- //Footer About Section -->
+        <!-- Footer Quick Links Section -->
+        <div class="w3-container footer-section links">
+            <h2 class=footer-section-header">The Creators</h2>
+            <br>
+            <ul>
+                <a href="bPeraza.html">
+                    <li>Brad Peraza</li>
+                </a>
+                <a href="JiahongZhan.html">
+                    <li>Jiahong Zhan</li>
+                </a>
+                <a href="jsamcam.html">
+                    <li>Joel Samaniego</li>
+                </a>
+                <a href="mesoma.html">
+                    <li>Mesoma Esonwune</li>
+                </a>
+                <a href="rrees.html">
+                    <li>Ray Rees</li>
+                </a>
+                <a href="roshvargh.html">
+                    <li>Roshni Varghese</li>
+                </a>
+            </ul>
+            <!-- //Footer Quick Links Section -->
+        </div>
+        <!-- Footer Contact Us Section -->
+        <div class="w3-container footer-section contact-form">
+            <h2 class="footer-section-header">Contact us</h2>
+            <br>
+            <form action="index.html" method="post">
+                <input type="email" name="email" class="text-input contact-input" placeholder="example@gmail.com">
+                <textarea name="message" class="text-input contact-input" placeholder="Your Message Here..."></textarea>
+                <button type="submit" class="btn btn-big">
+                    <i class="fa fa-envelope"></i>
+                    Send
+                </button>
+            </form>
+
+
+            <div class="contact">
+                <span><i class="fa fa-phone"><a href="sms:123-456-7890"></a></i> &nbsp; 123-456-7890</span>
+                <span><i class="fa fa-envelope"></i> &nbsp; garageAppInfo@gmail.com</span>
+            </div>
+            <div class="socials">
+                <a href="https://facebook.com"><i class="fa fa-facebook"></i></a>
+                <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+                <a href="https://twitter.com"><i class="fa fa-twitter"></i></a>
+                <a href="https://youtube.com"><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+        <!-- //Footer Contact Us Section-->
+    </div>
+    <!-- //Footer Content -->
+    <!-- Footer bottom  -->
+    <div class="w3-container footer-bottom">
+        &copy; GarageApp.com | Designed by csc648 SFSU students
+    </div>
+    <!-- //Footer bottom -->
+</div>
+<!-- //Footer -->
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+        showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+        }
+        x[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " w3-opacity-off";
+    }
+</script>
+</body>
+</html>

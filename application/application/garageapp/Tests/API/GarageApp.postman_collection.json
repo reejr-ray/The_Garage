@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "39c37005-224c-4ca4-ad87-08f586d85599",
+		"name": "GarageApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "post / user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b4c824b3-8fab-468f-ad20-a24529e8bec7",
+								"exec": [
+									"  pm.test(\"New user posted\", function () {",
+									"      var jsonData = pm.response.json();",
+									"      pm.expect(jsonData.insertId).to.eql(999);",
+									"  });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost/user/?idUser=999&first_Name=Basil&last_Name=Poledouris&rating=5",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"user",
+								""
+							],
+							"query": [
+								{
+									"key": "idUser",
+									"value": "999"
+								},
+								{
+									"key": "first_Name",
+									"value": "Basil"
+								},
+								{
+									"key": "last_Name",
+									"value": "Poledouris"
+								},
+								{
+									"key": "rating",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "get",
+			"item": [
+				{
+					"name": "get /homepage",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81c26858-f2f6-4bf1-873e-46c8d7edf915",
+								"exec": [
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Parking without the hassle\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get /user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4aae9251-674c-4e4b-ace7-ea5fc69fcb28",
+								"exec": [
+									"  pm.test(\"User 1 retrieved\", function () {",
+									"      var jsonData = pm.response.json();",
+									"      pm.expect(jsonData.idUser).to.eql(1);",
+									"  });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/user/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get /parking-spot",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "819fe455-f28d-43a1-8086-58ff3c64e169",
+								"exec": [
+									"  pm.test(\"Parking Spot 1 retrieved\", function () {",
+									"     pm.expect([]).to.be.an('array').that.is.empty;",
+									"    });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/parking-spot",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"parking-spot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get /account",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "74e1086b-c1e4-445f-ad0e-10bd0b2d51d1",
+								"exec": [
+									"  pm.test(\"Account 1 retrieved\", function () {",
+									"      var jsonData = pm.response.json();",
+									"      pm.expect(jsonData.idAccount).to.eql(1);",
+									"  });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/account/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"account",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get /host",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "52b1fc53-27aa-486d-8880-1021447ba33c",
+								"exec": [
+									"  pm.test(\"Host 1 retrieved\", function () {",
+									"      var jsonData = pm.response.json();",
+									"      pm.expect(jsonData.idHost).to.eql(1);",
+									"  });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/host/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"host",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get /photo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c5b62bc4-1fe3-4975-9526-85bde778a688",
+								"exec": [
+									"  pm.test(\"Photo 1 retrieved\", function () {",
+									"      var jsonData = pm.response.json();",
+									"      pm.expect(jsonData.idPhotos).to.eql(1);",
+									"  });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/photo/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"photo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get /region",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "52075e52-e451-4556-bed3-bce3b7b921a3",
+								"exec": [
+									"  pm.test(\"Region 1 retrieved\", function () {",
+									"      var jsonData = pm.response.json();",
+									"      pm.expect(jsonData.idRegion).to.eql(1);",
+									"  });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/region/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"region",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get /vehicle",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "50398100-7322-46c5-b1f4-673e839dde98",
+								"exec": [
+									"  pm.test(\"Vehicle 4 retrieved\", function () {",
+									"      var jsonData = pm.response.json();",
+									"      pm.expect(jsonData.idVehicle).to.eql(4);",
+									"  });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/vehicle/4",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"vehicle",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "delete",
+			"item": [
+				{
+					"name": "delete /user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dd1e03ba-ee19-41fd-a6ac-bc81ae04cec5",
+								"exec": [
+									"  pm.test(\"User deleted\", function () {",
+									"      var jsonData = pm.response.json();",
+									"      pm.expect(jsonData.affectedRows).to.eql(1);",
+									"  });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost/user/delete/999",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"user",
+								"delete",
+								"999"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>homepage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../resources/style_sheets/profilePage.css">
+<link rel="stylesheet" href="../resources/style_sheets/homepage.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+    .myLink {display: none}
+    body {
+        font-family: Arial;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .openBtn {
+        background: #f1f1f1;
+        border: none;
+        padding: 10px 15px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .openBtn:hover {
+        background: #bbb;
+    }
+
+    .overlay {
+        height: 100%;
+        width: 100%;
+        display: none;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.9);
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 46%;
+        width: 80%;
+        text-align: center;
+        margin-top: 30px;
+        margin: auto;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .overlay .closebtn:hover {
+        color: #ccc;
+    }
+
+    .overlay input[type=text] {
+        padding: 15px;
+        font-size: 17px;
+        border: none;
+        float: left;
+        width: 80%;
+        background: white;
+    }
+
+    .overlay input[type=text]:hover {
+        background: #f1f1f1;
+    }
+
+    .overlay button {
+        float: left;
+        width: 20%;
+        padding: 15px;
+        background: #ddd;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .overlay button:hover {
+        background: #bbb;
+    }
+</style>
+
+<body class = "w3-light-grey">
+
+<!--
+<div id="myOverlay" class="overlay">
+    <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+    <div class="overlay-content">
+        <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</div>
+-->
+
+<div class="w3-bar w3-white w3-border-bottom w3-xlarge">
+    <a href="homepage.html" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class="fa fa-map-marker w3-margin-right"></i>The Garage</b></a>
+    <a href="browseSpots.html" class="w3-bar-item w3-button w3-mobile">Browse Spots</a>
+    <a href="profile.html" class="w3-bar-item w3-button w3-right w3-hover-red w3-text-grey"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+</div>
+
+<header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+    <img class="w3-image" src="../resources/SF.jpg" alt="SF" width="1500" height="700">
+    <div class="w3-display-middle" style="width:50%">
+        <div class="w3-bar w3-black">
+            <button class="garagebutton w3-bar-item w3-button tablink" onclick="openLink(event, 'FindPark');"><i class="fa fa-car w3-margin-right"></i>Find Parking</button>
+            <button class="garagebutton w3-bar-item w3-button tablink" onclick="openLink(event, 'Host');"><i class="fa fa-address-book w3-margin-right"></i>Host With Us</button>
+        </div>
+
+        <!-- Tabs -->
+        <div id="FindPark" class="w3-container w3-white w3-padding-16 myLink">
+            <h3>Parking without the hassle</h3>
+            <div class="w3-row-padding" style="margin:0 -16px;">
+                <div class="w3-half">
+                    <label>Location</label>
+                    <input class="w3-input w3-border" type="text" placeholder="Where you going?">
+                </div>
+                <div class="w3-half">
+                    <label>Duration Stay</label>
+                    <input class="w3-input w3-border" type="text" placeholder="How many minutes?">
+                </div>
+            </div>
+            <p> </p>
+            <a href="browseSpots.html"><button class="w3-button w3-dark-grey">Check availability</button></a>
+        </div>
+
+        <div id="Host" class="w3-container w3-white w3-padding-16 myLink">
+            <h3>Have an empty spot?</h3>
+            <p>Host your parking spot on The Garage.</p>
+            <p>The Garage allows for you to make money using your spot when you aren't using it.</p>
+            <p> </p>
+            <a href="accountSignIn.html"><button class="w3-button w3-dark-grey">Sign Up</button></a>
+        </div>
+    </div>
+</header>
+<div class="w3-container footer">
+    <!-- Footer Content  -->
+    <div class="w3-container footer-content">
+        <!-- Footer About Section -->
+        <div class="w3-container footer-section about">
+            <h2 class="footer-section-header"><i class="fa fa-map-marker w3-margin-right" style="color:red;"></i>The Garage</h2>
+            <p>
+                Our mission is to provide a service that connects people to parking spots near their destination for a reasonable price.
+                We know half the journey is getting there, don't let the other half be parking.
+            </p>
+        </div>
+        <!-- //Footer About Section -->
+        <!-- Footer Quick Links Section -->
+        <div class="w3-container footer-section links">
+            <h2 class=footer-section-header">The Creators</h2>
+            <br>
+            <ul>
+                <a href="bPeraza.html">
+                    <li>Brad Peraza</li>
+                </a>
+                <a href="JiahongZhan.html">
+                    <li>Jiahong Zhan</li>
+                </a>
+                <a href="jsamcam.html">
+                    <li>Joel Samaniego</li>
+                </a>
+                <a href="mesoma.html">
+                    <li>Mesoma Esonwune</li>
+                </a>
+                <a href="rrees.html">
+                    <li>Ray Rees</li>
+                </a>
+                <a href="roshvargh.html">
+                    <li>Roshni Varghese</li>
+                </a>
+            </ul>
+            <!-- //Footer Quick Links Section -->
+        </div>
+        <!-- Footer Contact Us Section -->
+        <div class="w3-container footer-section contact-form">
+            <h2 class="footer-section-header">Contact us</h2>
+            <br>
+            <form action="index.html" method="post">
+                <input type="email" name="email" class="text-input contact-input" placeholder="example@gmail.com">
+                <textarea name="message" class="text-input contact-input" placeholder="Your Message Here..."></textarea>
+                <button type="submit" class="btn btn-big">
+                    <i class="fa fa-envelope"></i>
+                    Send
+                </button>
+            </form>
+
+
+            <div class="contact">
+                <span><i class="fa fa-phone"><a href="sms:123-456-7890"></a></i> &nbsp; 123-456-7890</span>
+                <span><i class="fa fa-envelope"></i> &nbsp; garageAppInfo@gmail.com</span>
+            </div>
+            <div class="socials">
+                <a href="https://facebook.com"><i class="fa fa-facebook"></i></a>
+                <a href="https://instagram.com"><i class="fa fa-instagram"></i></a>
+                <a href="https://twitter.com"><i class="fa fa-twitter"></i></a>
+                <a href="https://youtube.com"><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+        <!-- //Footer Contact Us Section-->
+    </div>
+    <!-- //Footer Content -->
+    <!-- Footer bottom  -->
+    <div class="w3-container footer-bottom">
+        &copy; GarageApp.com | Designed by csc648 SFSU students
+    </div>
+    <!-- //Footer bottom -->
+</div>
+<!-- //Footer -->
+
+<script>
+    // Tabs
+    function openLink(evt, linkName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("myLink");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+        }
+        document.getElementById(linkName).style.display = "block";
+        evt.currentTarget.className += " w3-red";
+    }
+
+    // Click on the first tablink on load
+    document.getElementsByClassName("tablink")[0].click();
+
+    <!--
+    function openSearch() {
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function closeSearch() {
+        document.getElementById("myOverlay").style.display = "none";
+    }
+    -->
+</script>
+</body>
+</html>

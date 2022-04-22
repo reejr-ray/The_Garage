@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Host a Spot</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<style>
+    body {font-family: "Raleway", Arial, Helvetica, sans-serif}
+
+    .info {
+        padding: 0 10px 0 10px;
+    }
+
+</style>
+
+<body class="w3-light-grey">
+
+<!--
+<div class="w3-bar w3-white w3-border-bottom w3-xlarge">
+    <a href="homepage.html" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class="fa fa-map-marker w3-margin-right"></i>The Garage</b></a>
+    <a href="browseSpots.html" class="w3-bar-item w3-button w3-mobile">Browse Spots</a>
+    <a href="#" class="w3-bar-item w3-button w3-right w3-hover-red w3-text-grey"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+</div>
+-->
+
+<header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+    <img class="w3-image" src="../resources/login.jpg" alt="log" width="1500" height="700">
+    <div class="w3-display-middle" style="width:50%">
+        <div class="w3-bar w3-black">
+            <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Up');"><i></i>Host a Spot</button>
+        </div>
+
+
+        <div id="Up" class="w3-container w3-white w3-padding-16 myLink">
+            <h3>Ready to list your spot?</h3>
+            <h3>Add your parking spot information </h3>
+            <div class="w3-row-padding" style="margin:0px -16px;">
+                <div class="w3-auto">
+                    <h1 style = "font-size: 17px">Parking Spot Address</h1>
+                    <label>Street<br></label>
+                    <input type="text" style="width:350px" placeholder="(Ex. 123 Main St)">
+                </div>
+                <p> </p>
+                <div class="w3-auto">
+                    <table>
+                        <tr>
+                            <td><label>City</label></td>
+                            <td class="info"><label>State</label></td>
+                            <td class="info"><label>Zip Code</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" size="30" name="city" placeholder="(Ex. San Francisco)"></td>
+                            <td class="info"><input type="text" size = "10" name="state" placeholder="(Ex. CA)"></td>
+                            <td class="info"><input type="text" size = "15" name="zip" placeholder="(Ex. 94132)"></td>
+                        </tr>
+                    </table>
+                </div>
+                <p></p>
+                <div class="w3-auto">
+                    <table>
+                        <tr>
+                            <td><label>Rate</label></td>
+                            <td class="info"><label>Spot Type</label></td>
+                            <td class="info"><label>Check-in Time</label></td>
+                            <td class="info"><label>Check-out Time</label></td>
+                        </tr>
+                        <tr>
+                            <td>$<input type="number" min="1" step="any" style="width: 75px" name="rate"></td>
+                            <td class="info">
+                                <select name = "spotType" id = "spotType">
+                                    <option value="" disable selected>Select</option>
+                                    <option value="driveway">Driveway</option>
+                                    <option value="garage">Garage</option>
+                                    <option value="parkingStall">Parking Stall</option>
+                                </select>
+                            </td>
+                            <td class="info"><input type="time" style="width: 150px" id="appt" name="appt"></td>
+                            <td class="info"><input type="time" style="width: 150px" id="appt" name="appt"></td>
+
+                        </tr>
+                    </table>
+
+                </div>
+                <p> </p>
+
+                <div class="w3-auto">
+                    <label>What days will your spot be available?<br></label>
+
+                    <table cellspacing="0">
+                        <tr>
+                            <td class="info"><label>Sun</label></td>
+                            <td class="info"><label>Mon</label></td>
+                            <td class="info"><label>Tues</label></td>
+                            <td class="info"><label>Wed</label></td>
+                            <td class="info"><label>Thurs</label></td>
+                            <td class="info"><label>Fri</label></td>
+                            <td class="info"><label>Sat</label></td>
+
+
+                        </tr>
+                        <tr>
+                            <td class="info" style="text-align: center">
+                                <input class="w3-check" type="checkbox" id="sun" name="sun" value="Sun">
+                            </td>
+                            <td class="info" style="text-align: center">
+                                <input class="w3-check" type="checkbox" id="mon" name="mon" value="Mon">
+                            </td>
+                            <td class="info" style="text-align: center">
+                                <input class="w3-check" type="checkbox" id="tues" name="tues" value="Tues">
+                            </td>
+                            <td class="info" style="text-align: center">
+                                <input class="w3-check" type="checkbox" id="wed" name="wed" value="Wed">
+                            </td>
+                            <td class="info" style="text-align: center">
+                                <input class="w3-check" type="checkbox" id="thurs" name="thurs" value="Thurs">
+                            </td>
+                            <td class="info" style="text-align: center">
+                                <input class="w3-check" type="checkbox" id="fri" name="fri" value="fri">
+                            </td>
+                            <td class="info" style="text-align: center">
+                                <input class="w3-check" type="checkbox" id="sat" name="sat" value="sat">
+                            </td>
+
+                        </tr>
+                    </table>
+                </div>
+
+
+                <p> </p>
+                <div class="w3-auto">
+                    <label>Upload an image of your spot</label>
+                    <p></p>
+                    <input type="file" id="img" name="img" accept="image/*">
+                </div>
+            </div>
+            <p> </p>
+            <a href="homepage.html"><button class="w3-button w3-dark-grey">Add Vehicle</button></a>
+        </div>
+    </div>
+</header>
+
+<script>
+    // Tabs
+    function openLink(evt, linkName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("myLink");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+        }
+        document.getElementById(linkName).style.display = "block";
+        evt.currentTarget.className += " w3-red";
+    }
+
+    // Click on the first tablink on load
+    document.getElementsByClassName("tablink")[0].click();
+
+</script>
+
+</body>
+</html>
